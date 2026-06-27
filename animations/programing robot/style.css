@@ -1,0 +1,71 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+  
+  #webgl {
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  #webgl2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 2;
+  }
+  
+
+  
+  .svg-box {
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    z-index: 1;
+  
+    #robot {
+      cursor: pointer;
+    }
+  }
+
+
+
+
+
+
+
+  .vesmír {
+    display: block;
+    background: rgb(0, 0, 0);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+  }
+  
+  .hvězda {
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    animation: hvězda linear infinite;
+  }
+  
+  /* Klíčové snímky pro hvězdy */
+  @keyframes hvězda {
+    from { transform: translate3d(-100%, 0, 1px); }
+    to { transform: translate3d(100vw, 0, 1px); }
+  }
+  
+  /* Dynamické generování hvězd pomocí JavaScriptu */
+  /* Tento kód je v CSS pro zjednodušení; pro skutečnou implementaci bude potřeba JavaScript */
+  .hvězda:nth-child(1) { width: 5px; height: 5px; animation-duration: 15s; animation-delay: -10s; top: 10%; left: 20%; }
+  .hvězda:nth-child(2) { width: 4px; height: 4px; animation-duration: 20s; animation-delay: -15s; top: 30%; left: 40%; }
+  /* Další hvězdy se budou přidávat podobně... */
