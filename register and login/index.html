@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    background: #dfdfdf;
+}
+
+.wrapper{
+    display: flex;
+    max-width: 560px;
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.wrapper .left,
+.wrapper .right{
+    width: 50%;
+    height: 100%;
+    padding: 30px;
+}
+
+.wrapper .left{
+    background: #494f57;
+}
+
+.wrapper .left h3{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.wrapper .left img{
+    display: block;
+    width: 220px;
+    margin: 25px auto 0;
+}
+
+.wrapper .right{
+    background: #fff;
+}
+
+.wrapper .right .tabs ul{
+    text-align: center;
+}
+
+.wrapper .right .tabs ul li{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #494f57;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.wrapper .right .tabs ul li.active{
+    border-bottom: 2px solid #494f57;
+}
+
+.wrapper .right .register,
+.wrapper .right .login{
+    margin-top: 20px;
+}
+
+.wrapper .right .input_field{
+    margin-bottom: 15px;
+}
+
+.wrapper .right .input_field .input{
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    font-size: 12px;
+    background: #ecebeb;
+}
+
+.wrapper .right .btn{
+    margin-top: 20px;
+    background: #494f57;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.wrapper .right .btn a{
+    color: #fff;
+    display: block;
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+        <div class="wrapper">
+        <div class="left">
+            <h3>Watch collector</h3>   
+            <img src="register watch.jpg" alt="Rocket_image">
+        </div>
+        <div class="right">
+            <div class="tabs">
+            <ul>
+                <li class="register_li">Register</li>
+                <li class="login_li">login</li>
+            </ul>
+            </div>
+
+            <div class="register">
+            <div class="input_field">
+                <input type="text" placeholder="E-mail" class="input">
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="Password" class="input">
+            </div>
+            <div class="input_field">
+                <input type="password" placeholder="Username" class="input">
+            </div>
+            <div class="btn"><a href="#">Register</a></div>
+        </div>
+
+        <div class="login">
+            <div class="input_field">
+                <input type="text" placeholder="E-mail" class="input">
+            </div>
+            <div class="input_field">
+                <input type="password" placeholder="Password" class="input">
+            </div>
+            <div class="btn"><a href="#">Login</a></div>
+        </div>
+
+        </div>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".login").hide();
+            $(".register_li").addClass("active");
+    
+            $(".login_li").click(function(){
+                $(this).addClass("active");
+                $(".register_li").removeClass("active");
+                $(".login").show();
+                $(".register").hide();
+            })
+    
+            $(".register_li").click(function(){
+                $(this).addClass("active");
+                $(".login_li").removeClass("active");
+                $(".register").show();
+                $(".login").hide();
+            })
+        });
+    </script>
+</body>
+</html>

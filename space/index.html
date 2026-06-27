@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="vesmír">
+        <!-- Hvězdy budou přidány dynamicky pomocí JavaScriptu -->
+    </div>
+    
+    
+
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const vesmír = document.querySelector('.vesmír');
+        if (!vesmír) return; // Ověření, že .vesmír existuje
+
+        for (let i = 0; i < 70; i++) {
+            const hvězda = document.createElement('div');
+            hvězda.classList.add('hvězda');
+            const size = Math.random() * 7 + 3 + 'px';
+            const duration = Math.random() * 30 + 15 + 's';
+            const delay = Math.random() * 40 - 40 + 's';
+            const top = Math.random() * 100 + '%';
+            const left = Math.random() * 0 + '%'; // Změněno z 100% na 50%
+            hvězda.style.width = size;
+            hvězda.style.height = size;
+            hvězda.style.animationDuration = duration;
+            hvězda.style.animationDelay = delay;
+            hvězda.style.top = top;
+            hvězda.style.left = left;
+            vesmír.appendChild(hvězda);
+        }
+    });
+    </script>
+</body>
+</html>

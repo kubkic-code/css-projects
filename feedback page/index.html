@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="feedback-box">
+        <h2>Give feedback</h2>
+        <p>Rate this web:</p>
+        <div class="smiley-container">
+            <span class="smiley" onclick="rate(1)">😠</span>
+            <span class="smiley" onclick="rate(2)">😐</span>
+            <span class="smiley" onclick="rate(3)">😊</span>
+            <span class="smiley" onclick="rate(4)">😃</span>
+            <span class="smiley" onclick="rate(5)">😍</span>
+        </div>
+        <p>Type of problem:</p>
+        <select id="issue-select">
+            <option value="none">None</option>
+            <option value="usability">Usability</option>
+            <option value="functionality">Functionality</option>
+            <option value="design">Design</option>
+        </select>
+        <p>Do you have any thoughts you'd like to share?</p>
+        <textarea id="additional-feedback-textarea"></textarea>
+
+        <button id="submit-feedback-button" onclick="submitFeedback()">Submit</button>
+        
+        <!---
+        <div id="thank-you-message" class="thank-you-message">
+            Thanks for your feedback!
+        -->
+        
+        </div>
+
+
+
+
+
+
+
+
+
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .feedback-box {
+            width: 400px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #b2b2b2;
+            border-radius: 20px;
+            margin: 0 auto;
+            margin-top: 100px;
+            text-align: left;
+            box-shadow: 7px 7px 5px 1px #888888; /* přidává stín jen dole a vpravo */
+        }
+
+        .smiley-container {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 30px;
+        }
+
+        .smiley {
+            cursor: pointer;
+            font-size: 36px; /* Menší velikost emoji */
+            transition: transform 0.3s; /* Přidává animaci zvětšení/zmenšení */
+            user-select: none; /* Zakazuje označení myší */
+        }
+
+        .smiley:hover {
+            transform: scale(1.2); /* Zvětší emoji při najetí myší */
+        }
+
+        #issue-select {
+            width: calc(100% - 10px);
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        textarea {
+            width: calc(100% - 10px);
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            outline: none;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+        }
+
+        #submit-feedback-button {
+            background-color: #007bff;
+            color: white;
+            font-size: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #submit-feedback-button:hover {
+            background-color: #0764c7;
+        }
+
+        /*
+        .thank-you-message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #18d01e;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            z-index: 1;
+            transform: translateY(-100%);
+            transition: transform 0.5s;
+        }
+
+        .thank-you-message.show {
+            transform: translateY(0);
+        } */
+    </style>
+
+
+
+
+
+
+    <script>
+        function rate(rating) {
+            console.log("User rated:", rating);
+            // You can add your logic to handle the rating here
+        }
+
+        function submitFeedback() {
+            // Do any necessary processing here
+
+            // Display thank you message
+            var thankYouMessage = document.getElementById('thank-you-message');
+            thankYouMessage.classList.add('show');
+
+            // Hide the message after a certain period (e.g., 3 seconds)
+            setTimeout(function () {
+                thankYouMessage.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>

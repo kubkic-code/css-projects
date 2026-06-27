@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+:root{
+    --primary-font: 'Poppins', sans-serif;
+    --color: #9176FF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color);
+}
+
+.search-bar{
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    transition: all .3s ease;
+}
+
+.search-bar__btn{
+    font-size: 40px;
+    color: var(--color);
+}
+
+.search-bar__input{
+    display: none;
+
+    height: 100%;
+    width: 100%;
+    font-size: 25px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    padding: 0 80px 0 30px;
+}
+
+.search-bar--active{
+    width: 400px;
+}
+
+.search-bar__input--active{
+    display: inline-block;
+}
+
+.search-bar__btn--active{
+    background-color: var(--color);
+    color: #fff;
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+
+    position: absolute;
+    right: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

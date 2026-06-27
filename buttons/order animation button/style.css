@@ -1,0 +1,215 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ededed;
+}
+.container {
+    position: relative;
+    width: 240px;
+    height: 63px;
+    background: #ededed;
+    border-radius: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+.button{
+    padding: 1.3em 3em;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    width: 240px;
+    height: 63px;
+    box-shadow: 0px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.button:hover{
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+.button:active{
+    transform: translateY(-1px);
+}
+.road {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    border-radius: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    display: none;
+    overflow: hidden;
+}
+.road::before
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #fff, #fff 50%,
+    transparent 50%, transparent 100%);
+    background-size: 50px;
+    animation: animate_road 0.2s linear infinite;
+}
+@keyframes animate_road
+{
+    0%
+    {
+        background-position: 50px 0;
+    }
+    100%
+    {
+        background-position: 0 0;
+    }
+}
+.truck {
+    left: 50px;
+    width: 60px;
+    height: 41px;
+    background: #d4dbe7;
+    border-radius: 3px;
+    box-shadow: -7px 7px rgba(0,0,0,0.25);
+    transform-style: preserve-3d;
+    perspective: 800px;
+    animation: animate_truck 3s linear infinite;
+  }
+@keyframes animate_truck
+{
+    0%
+    {
+        transform: translateX(-70px) translateY(0px);
+    }
+   60%
+    {
+        transform: translateX(-30px) translateY(00px);
+    } 
+    100%
+    {
+        transform: translateX(160px) translateY(00px);
+    } 
+
+}
+.truck::before
+{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 61px;
+    width: 14px;
+    height: 41px;
+    border-radius: 3px;
+    background: #275EFE;
+}
+.truck::after
+{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 63px;
+    width: 21px;
+    height: 41px;
+    border-radius: 21px;
+    background: #275EFE;
+}
+.truck span
+{
+    position: absolute;
+    top: 2.5px;
+    left: 62px;
+    width: 6px;
+    height: 36px;
+    background: #1886bd;
+    border-radius: 4px;
+    z-index: 100;
+}
+.truck span::before
+{
+    content: '';
+    position: absolute;
+    top: 2.5px;
+    left: 20px;
+    width: 3px;
+    height: 7px;
+    border-radius: 2px;
+    background: #fbff00;
+    box-shadow: 0 24px #fbff00;
+}
+.truck span b
+{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    width: 15px;
+    height: 30px;
+    background: #111;
+    border-radius: 10px;
+}
+.truck span b::before
+{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    width: 3px;
+    height: 30px;
+    background: #111;
+    z-index: 91;
+}
+.truck span b::after
+{
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0px;
+    width: 6px;
+    height: 36px;
+    background: #7699FF;
+    border-radius: 4px;
+    z-index: 100;
+}
+.truck .light_beam
+{
+    position: absolute;
+    top: 4.3px;
+    left: 75px;
+    width: 50px;
+    height: 7px;
+    background: linear-gradient(90deg,rgba(255, 208, 1, 0.4),transparent);
+    transform: perspective(500px) rotateY(-50deg);
+}
+.truck .light_beam2
+{
+    position: absolute;
+    bottom: 4.3px;
+    left: 75px;
+    width: 50px;
+    height: 7px;
+    background: linear-gradient(90deg,rgba(255, 208, 1, 0.4),transparent);
+    transform: perspective(500px) rotateY(-50deg);
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS taxi animation</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="button" id="showButton" onclick="showAnimation()">OBJEDNAT</button>
+        <div class="road" id="roadContainer">
+            <div class="truck">
+                <div class="light_beam"></div>
+                <div class="light_beam2"></div>
+                <span>
+                <b></b>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showAnimation() {
+            const buttonContainer = document.querySelector(".button");
+            const roadContainer = document.querySelector(".road");
+            const truckContainer = document.querySelector(".truck");
+            buttonContainer.style.display = "none";
+            roadContainer.style.display = "flex";
+            truckContainer.style.display = "flex";
+            
+            setTimeout(() => {
+                roadContainer.style.display = "none";
+            }, 2950);
+        }
+    </script>
+</body>
+</html>
